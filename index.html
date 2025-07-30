@@ -1,1 +1,535 @@
-<button class="generated-button" style="background-color: rgb(82, 194, 224); color: rgb(255, 255, 255); font-family: &quot;Shadows Into Light&quot;, cursive;">📚 syllabus<div class="sparkle-container"></div><div class="sparkle" style="left: 49.7979%; top: 94.1012%; background: rgb(255, 186, 128); animation-duration: 1.28156s;"></div><div class="sparkle" style="left: 16.4875%; top: 20.0369%; background: rgb(169, 128, 255); animation-duration: 1.67964s;"></div><div class="sparkle" style="left: 91.5486%; top: 47.5608%; background: rgb(255, 128, 195); animation-duration: 1.01208s;"></div><div class="sparkle" style="left: 4.46212%; top: 47.0953%; background: rgb(169, 128, 255); animation-duration: 1.1548s;"></div><div class="sparkle" style="left: 93.6522%; top: 57.2465%; background: rgb(255, 138, 128); animation-duration: 0.867576s;"></div><div class="sparkle" style="left: 69.574%; top: 60.8693%; background: rgb(255, 128, 136); animation-duration: 1.01967s;"></div><div class="sparkle" style="left: 89.6214%; top: 72.8464%; background: rgb(255, 193, 128); animation-duration: 1.68947s;"></div><div class="sparkle" style="left: 97.0986%; top: 83.6288%; background: rgb(128, 255, 245); animation-duration: 1.03217s;"></div><div class="sparkle" style="left: 30.3388%; top: 10.2009%; background: rgb(128, 241, 255); animation-duration: 1.09582s;"></div><div class="sparkle" style="left: 22.1442%; top: 1.51972%; background: rgb(128, 255, 138); animation-duration: 1.33039s;"></div><div class="sparkle" style="left: 3.25089%; top: 20.9413%; background: rgb(151, 255, 128); animation-duration: 1.48833s;"></div><div class="sparkle" style="left: 33.2552%; top: 32.0609%; background: rgb(255, 128, 235); animation-duration: 1.4302s;"></div><div class="sparkle" style="left: 22.7914%; top: 3.46465%; background: rgb(179, 128, 255); animation-duration: 1.50163s;"></div><div class="sparkle" style="left: 28.4321%; top: 1.58533%; background: rgb(128, 255, 221); animation-duration: 0.94972s;"></div><div class="sparkle" style="left: 60.8659%; top: 49.6397%; background: rgb(128, 241, 255); animation-duration: 1.0737s;"></div><div class="sparkle" style="left: 99.5597%; top: 82.8222%; background: rgb(128, 255, 179); animation-duration: 1.01222s;"></div><div class="sparkle" style="left: 68.2774%; top: 48.907%; background: rgb(255, 194, 128); animation-duration: 1.27506s;"></div><div class="sparkle" style="left: 46.9309%; top: 2.91665%; background: rgb(255, 128, 197); animation-duration: 0.866507s;"></div><div class="sparkle" style="left: 62.7518%; top: 68.3724%; background: rgb(255, 128, 133); animation-duration: 1.01935s;"></div><div class="sparkle" style="left: 55.553%; top: 95.0252%; background: rgb(255, 128, 159); animation-duration: 1.4639s;"></div></button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teacher Sparkle Button Generator</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&family=Patrick+Hand&family=Caveat&family=Gloria+Hallelujah&family=Comic+Neue&family=Roboto&family=Montserrat&family=Pacifico&family=Lobster&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background: #121830;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .title {
+      text-align: center;
+      font-size: 3rem;
+      padding: 1rem;
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 8px #fff;
+      user-select: none;
+    }
+    .form-container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 1rem auto 3rem auto;
+      background: rgba(255 255 255 / 0.05);
+      border-radius: 1rem;
+      box-sizing: border-box;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      user-select: none;
+    }
+    input,
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      font-size: 1rem;
+      border-radius: 0.4rem;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+      background: #1f2640;
+      color: white;
+      font-family: inherit;
+    }
+    select option[data-font-preview] {
+      font-family: inherit; /* Ensure font preview on dropdown options */
+    }
+    #preview {
+      margin-top: 2rem;
+      text-align: center;
+      min-height: 120px;
+    }
+    .sparkle-container {
+      position: relative;
+      display: inline-block;
+    }
+    .sparkle-button {
+      padding: 1rem 2.5rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      color: white;
+      transition: transform 0.2s ease;
+      user-select: none;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      animation: pulseGlow 2s infinite;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    .sparkle-layer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 6px;
+      border-radius: 10px / 50%;
+      pointer-events: none;
+      opacity: 0.8;
+      filter: drop-shadow(0 0 2px rgba(255 255 255 / 0.8));
+      animation: lightTrailMove 1.4s linear infinite;
+      transform-origin: center center;
+    }
+    @keyframes lightTrailMove {
+      0% {
+        opacity: 0.8;
+        transform: translate(0, 0) scaleX(1) scaleY(1) rotate(var(--rot));
+      }
+      50% {
+        opacity: 0.3;
+        transform: translate(calc(var(--x) * 0.5), calc(var(--y) * 0.5)) scaleX(1.4) scaleY(0.6) rotate(var(--rot));
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) scaleX(0.8) scaleY(0.4) rotate(var(--rot));
+      }
+    }
+    @keyframes pulseGlow {
+      0%,
+      100% {
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 28px rgba(255, 255, 255, 0.5);
+      }
+    }
+    .copy-button {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background-color: #6c63ff;
+      border: none;
+      border-radius: 1rem;
+      color: white;
+      cursor: pointer;
+      font-size: 1.1rem;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .copy-button:hover,
+    .copy-button:focus {
+      background-color: #5848c2;
+      outline: none;
+    }
+    /* Mouse star trail */
+    .star {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.8;
+      will-change: transform, opacity;
+      animation: starFade 0.8s forwards;
+      z-index: 1000;
+    }
+    @keyframes starFade {
+      to {
+        transform: translateY(-20px) scale(0.6);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="title" role="heading" aria-level="1">
+    ✨ Sparkle Button Generator for Teachers ✨
+  </div>
+  <main class="form-container" role="main" aria-label="Sparkle button generator form">
+    <label for="btnText">Button Text:</label>
+    <input
+      type="text"
+      id="btnText"
+      value="Click Me!"
+      aria-describedby="btnTextDesc"
+      placeholder="Enter button text"
+    />
+    <small id="btnTextDesc" style="color:#bbb;">Enter the text to appear on the button.</small>
+
+    <label for="btnLink">Button Link:</label>
+    <input
+      type="url"
+      id="btnLink"
+      value="https://example.com"
+      aria-describedby="btnLinkDesc"
+      placeholder="Enter URL (e.g., https://example.com)"
+    />
+    <small id="btnLinkDesc" style="color:#bbb;">Enter the URL where the button should link.</small>
+
+    <label for="emoji">Choose Emoji:</label>
+    <select id="emoji" aria-describedby="emojiDesc" aria-label="Emoji selector"></select>
+    <small id="emojiDesc" style="color:#bbb;">Select an emoji to display on the button.</small>
+
+    <label for="font">Font Style:</label>
+    <select id="font" aria-describedby="fontDesc" aria-label="Font selector">
+      <option value="'Indie Flower', cursive" style="font-family: 'Indie Flower', cursive;" data-font-preview>Indie Flower</option>
+      <option value="'Shadows Into Light', cursive" style="font-family: 'Shadows Into Light', cursive;" data-font-preview>Shadows Into Light</option>
+      <option value="'Patrick Hand', cursive" style="font-family: 'Patrick Hand', cursive;" data-font-preview>Patrick Hand</option>
+      <option value="'Caveat', cursive" style="font-family: 'Caveat', cursive;" data-font-preview>Caveat</option>
+      <option value="'Gloria Hallelujah', cursive" style="font-family: 'Gloria Hallelujah', cursive;" data-font-preview>Gloria Hallelujah</option>
+      <option value="'Comic Neue', sans-serif" style="font-family: 'Comic Neue', sans-serif;" data-font-preview>Comic Neue</option>
+      <option value="'Roboto', sans-serif" style="font-family: 'Roboto', sans-serif;">Roboto</option>
+      <option value="'Montserrat', sans-serif" style="font-family: 'Montserrat', sans-serif;">Montserrat</option>
+      <option value="'Pacifico', cursive" style="font-family: 'Pacifico', cursive;">Pacifico</option>
+      <option value="'Lobster', cursive" style="font-family: 'Lobster', cursive;">Lobster</option>
+    </select>
+    <small id="fontDesc" style="color:#bbb;">Choose a font style. The dropdown preview shows the font.</small>
+
+    <div id="preview" aria-live="polite" aria-atomic="true" aria-relevant="all"></div>
+    <button class="copy-button" onclick="copyCode()" aria-label="Copy the full HTML code">
+      📋 Copy HTML
+    </button>
+  </main>
+
+  <audio
+    id="clickSound"
+    src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEAQB8AAAABAAEACAAACABAAZGF0YQAAAAA="
+    preload="auto"
+  ></audio>
+
+  <script>
+    // Emoji to button color mapping
+    const emojiMap = {
+      "🎨": "#ff66c4",
+      "📚": "#6c63ff",
+      "✏️": "#ffd93d",
+      "🖍️": "#59ffa0",
+      "📎": "#3dcaff",
+      "📓": "#ff7eb9",
+      "🎵": "#ffc75f",
+      "🎭": "#f9f871",
+      "🌈": "#ff69b4",
+      "🧠": "#8e44ad",
+      "🔬": "#3498db",
+      "💡": "#f1c40f",
+      "🧪": "#1abc9c",
+      "📐": "#e67e22",
+      "📊": "#2980b9",
+      "🎉": "#e74c3c",
+      "🎓": "#2c3e50",
+      "💻": "#16a085",
+      "🌟": "#f39c12",
+      "🧵": "#d35400",
+    };
+
+    // Populate emoji selector with emojis
+    const emojiSelect = document.getElementById("emoji");
+    Object.keys(emojiMap).forEach((emoji) => {
+      const opt = document.createElement("option");
+      opt.value = emoji;
+      opt.textContent = emoji;
+      emojiSelect.appendChild(opt);
+    });
+    emojiSelect.value = "🌟"; // Default selected emoji
+
+    // Utility function: get contrasting color (black or white) for readability
+    function getContrastYIQ(hexcolor) {
+      hexcolor = hexcolor.replace("#", "");
+      const r = parseInt(hexcolor.substr(0, 2), 16);
+      const g = parseInt(hexcolor.substr(2, 2), 16);
+      const b = parseInt(hexcolor.substr(4, 2), 16);
+      const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+      return yiq >= 128 ? "black" : "white";
+    }
+
+    // Build the preview button and generate full page HTML for copying
+    function createFullPageHTML() {
+      const text = (document.getElementById("btnText").value || "Click Me!").trim();
+      const link = (document.getElementById("btnLink").value || "#").trim();
+      const emoji = document.getElementById("emoji").value || "🌟";
+      const font = document.getElementById("font").value || "'Indie Flower', cursive";
+      const baseColor = emojiMap[emoji] || "#f39c12";
+
+      const trailColors = [
+        "#FF4C4C",
+        "#FFB84C",
+        "#FFE54C",
+        "#4CFF57",
+        "#4CD3FF",
+        "#6E4CFF",
+        "#FF4CF2",
+      ];
+      const directions = [
+        { x: 0, y: -110, rot: "0deg" },
+        { x: 0, y: 110, rot: "180deg" },
+        { x: -110, y: 0, rot: "270deg" },
+        { x: 110, y: 0, rot: "90deg" },
+        { x: 78, y: -78, rot: "45deg" },
+        { x: -78, y: -78, rot: "315deg" },
+        { x: 78, y: 78, rot: "135deg" },
+        { x: -78, y: 78, rot: "225deg" },
+      ];
+
+      let sparklesHTML = "";
+      directions.forEach((dir, i) => {
+        for (let j = 0; j < 5; j++) {
+          const color = trailColors[(i * 5 + j) % trailColors.length];
+          const delay = (j * 0.28 + i * 0.07).toFixed(2);
+          sparklesHTML += `<div class="sparkle-layer" style="--x: ${dir.x}px; --y: ${dir.y}px; --rot: ${dir.rot}; background-color: ${color}; animation-delay: ${delay}s;"></div>\n`;
+        }
+      });
+
+      window.generatedHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sparkle Button</title>
+<style>
+  body {
+    margin: 0; padding: 0;
+    background-color: #121830;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    cursor: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sparkle-container {
+    position: relative;
+    display: inline-block;
+  }
+  .sparkle-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    color: ${getContrastYIQ(baseColor)};
+    transition: transform 0.2s ease;
+    user-select: none;
+    box-shadow: 0 0 12px rgba(255,255,255,0.2);
+    animation: pulseGlow 2s infinite;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: ${font};
+    background-color: ${baseColor};
+    white-space: nowrap;
+  }
+  .sparkle-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px; 
+    height: 6px;
+    border-radius: 10px / 50%;
+    pointer-events: none;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 2px rgba(255 255 255 / 0.8));
+    animation: lightTrailMove 1.4s linear infinite;
+    transform-origin: center center;
+  }
+  @keyframes lightTrailMove {
+    0% {
+      opacity: 0.8;
+      transform: translate(0, 0) scaleX(1) scaleY(1) rotate(var(--rot));
+    }
+    50% {
+      opacity: 0.3;
+      transform: translate(calc(var(--x) * 0.5), calc(var(--y) * 0.5)) scaleX(1.4) scaleY(0.6) rotate(var(--rot));
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--x), var(--y)) scaleX(0.8) scaleY(0.4) rotate(var(--rot));
+    }
+  }
+  @keyframes pulseGlow {
+    0%,100% {
+      box-shadow: 0 0 12px rgba(255,255,255,0.2);
+    }
+    50% {
+      box-shadow: 0 0 28px rgba(255,255,255,0.5);
+    }
+  }
+  /* Mouse star trail */
+  .star {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.8;
+    will-change: transform, opacity;
+    animation: starFade 0.8s forwards;
+    z-index: 1000;
+  }
+  @keyframes starFade {
+    to {
+      transform: translateY(-20px) scale(0.6);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="sparkle-container" aria-label="Sparkle button">
+    <a href="${link}" target="_blank" class="sparkle-button" role="button" tabindex="0" aria-pressed="false" aria-label="${text}">
+      ${emoji} ${text}
+    </a>
+    ${sparklesHTML}
+  </div>
+
+  <audio id="clickSound" src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEAQB8AAAABAAEACAAACABAAZGF0YQAAAAA=" preload="auto"></audio>
+
+<script>
+  const button = document.querySelector(".sparkle-button");
+  const clickSound = document.getElementById("clickSound");
+  button.addEventListener("click", () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+  });
+  document.body.style.cursor = "none";
+  document.body.addEventListener("mousemove", e => {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = e.clientX + "px";
+    star.style.top = e.clientY + "px";
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), 800);
+  });
+<\/script>
+</body>
+</html>
+`;
+    }
+
+    // Main function to update preview
+    function createButton() {
+      const textInput = document.getElementById("btnText");
+      const linkInput = document.getElementById("btnLink");
+      const emojiInput = document.getElementById("emoji");
+      const fontInput = document.getElementById("font");
+
+      const text = textInput.value.trim() || "Click Me!";
+      const link = linkInput.value.trim() || "#";
+      const emoji = emojiInput.value || "🌟";
+      const font = fontInput.value || "'Indie Flower', cursive";
+      const baseColor = emojiMap[emoji] || "#f39c12";
+
+      // Create button element
+      const btn = document.createElement("a");
+      btn.href = link;
+      btn.target = "_blank";
+      btn.className = "sparkle-button";
+      btn.style.backgroundColor = baseColor;
+      btn.style.fontFamily = font;
+      btn.style.color = getContrastYIQ(baseColor);
+      btn.textContent = `${emoji} ${text}`;
+
+      // Create sparkle container and sparkles
+      const container = document.createElement("div");
+      container.className = "sparkle-container";
+      container.appendChild(btn);
+
+      const directions = [
+        { x: 0, y: -110, rot: "0deg" },
+        { x: 0, y: 110, rot: "180deg" },
+        { x: -110, y: 0, rot: "270deg" },
+        { x: 110, y: 0, rot: "90deg" },
+        { x: 78, y: -78, rot: "45deg" },
+        { x: -78, y: -78, rot: "315deg" },
+        { x: 78, y: 78, rot: "135deg" },
+        { x: -78, y: 78, rot: "225deg" },
+      ];
+      const trailColors = [
+        "#FF4C4C",
+        "#FFB84C",
+        "#FFE54C",
+        "#4CFF57",
+        "#4CD3FF",
+        "#6E4CFF",
+        "#FF4CF2",
+      ];
+      directions.forEach((dir, i) => {
+        for (let j = 0; j < 5; j++) {
+          const sp = document.createElement("div");
+          sp.className = "sparkle-layer";
+          sp.style.setProperty("--x", `${dir.x}px`);
+          sp.style.setProperty("--y", `${dir.y}px`);
+          sp.style.setProperty("--rot", dir.rot);
+          sp.style.backgroundColor = trailColors[(i * 5 + j) % trailColors.length];
+          sp.style.animationDelay = `${j * 0.28 + i * 0.07}s`;
+          container.appendChild(sp);
+        }
+      });
+
+      // Update preview
+      const preview = document.getElementById("preview");
+      preview.innerHTML = "";
+      preview.appendChild(container);
+
+      // Update full HTML for copying
+      createFullPageHTML();
+    }
+
+    // Copy generated full HTML to clipboard
+    function copyCode() {
+      if (!window.generatedHTML) {
+        alert("Please generate a button first!");
+        return;
+      }
+      navigator.clipboard
+        .writeText(window.generatedHTML)
+        .then(() => {
+          alert(
+            "Full HTML page code copied to clipboard! You can now paste it into your Google Site or any webpage."
+          );
+        })
+        .catch(() => {
+          alert("Failed to copy. Please try again.");
+        });
+    }
+
+    // Event listeners to update preview when inputs change
+    document.getElementById("btnText").addEventListener("input", createButton);
+    document.getElementById("btnLink").addEventListener("input", createButton);
+    document.getElementById("emoji").addEventListener("change", createButton);
+    document.getElementById("font").addEventListener("change", createButton);
+
+    // Initial generation on page load
+    createButton();
+  </script>
+</body>
+</html>
